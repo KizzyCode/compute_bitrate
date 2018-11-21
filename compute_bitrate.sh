@@ -27,4 +27,4 @@ NEW_BITRATE_0=`echo "(($WIDTH * $HEIGHT) / $REFERENCE_SIZE) * $REFERENCE_BITRATE
 NEW_BITRATE_1=`echo "$BITRATE / (2 * 1024)" | bc -l | awk '{printf "%d", $0}'`
 NEW_BITRATE=$(($NEW_BITRATE_0 > $NEW_BITRATE_1 ? $NEW_BITRATE_1 : $NEW_BITRATE_0))
 
-echo "$FILE [${WIDTH}x${HEIGHT}] => $NEW_BITRATE"
+echo "$FILE [${WIDTH}x${HEIGHT}] => $NEW_BITRATE ($NEW_BITRATE_0 from size vs. $NEW_BITRATE_1 from x265)"
